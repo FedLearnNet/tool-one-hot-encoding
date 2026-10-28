@@ -90,8 +90,8 @@ config:
     tabularSchema: null
     type: CSV
 info:
-  name: tool-one-hot-encoding
-  slug: tool-one-hot-encoding
+  name: one-hot-encoding
+  slug: one-hot-encoding
   type: PRE_PROCESSING
   sourceUrl: https://github.com/FedLearnNet/tool-one-hot-encoding
   shortDescription: Converts categorical table columns into one-hot encoded numeric

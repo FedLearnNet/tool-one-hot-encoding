@@ -1,4 +1,4 @@
-# tool-one-hot-encoding
+# one-hot-encoding
 
 Converts categorical table columns into one-hot encoded numeric features.
 
