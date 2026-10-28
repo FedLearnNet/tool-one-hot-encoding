@@ -1,0 +1,99 @@
+config:
+  hyperparams:
+  - default: ''
+    description: Comma-separated list of columns to one-hot encode. If empty, all
+      object/category/bool columns are encoded.
+    maxValue: null
+    minValue: null
+    name: columns
+    options: []
+    pattern: null
+    type: STRING
+  - default: '0'
+    description: If true, drop the first category per feature (k-1 dummies).
+    maxValue: null
+    minValue: null
+    name: drop_first
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: '1'
+    description: If true, convert boolean columns to numeric 0/1 instead of one-hot
+      encoding them.
+    maxValue: null
+    minValue: null
+    name: bool_to_number
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: '0'
+    description: If true, create a dedicated dummy column for NaN values in encoded
+      columns.
+    maxValue: null
+    minValue: null
+    name: dummy_na
+    options: []
+    pattern: null
+    type: BOOLEAN
+  - default: ignore
+    description: How to handle unknown categories. Kept for consistency; pandas.get_dummies
+      encodes categories present in the input.
+    maxValue: null
+    minValue: null
+    name: handle_unknown
+    options:
+    - ignore
+    - error
+    pattern: null
+    type: CATEGORICAL
+  - default: __
+    description: Separator between column name and category in generated dummy column
+      names.
+    maxValue: null
+    minValue: null
+    name: prefix_sep
+    options: []
+    pattern: null
+    type: STRING
+  - default: '1'
+    description: If true, keep original categorical columns in addition to dummy columns.
+    maxValue: null
+    minValue: null
+    name: keep_original
+    options: []
+    pattern: null
+    type: BOOLEAN
+  input:
+  - delimiter: null
+    description: Input CSV table. Optional first column named 'id' (kept as identifier).
+      Other columns can be numeric or categorical.
+    hasHeader: true
+    maxValue: null
+    minValue: null
+    name: features
+    required: true
+    shape: null
+    tabularSchema:
+      allowOnlyNumbers: false
+      prohibitedNulls: false
+      nullPolicy: null
+    type: CSV
+  output:
+  - delimiter: null
+    description: One-hot encoded CSV (same rows; additional dummy columns).
+    hasHeader: null
+    maxValue: null
+    minValue: null
+    name: encoded
+    required: false
+    shape: null
+    tabularSchema: null
+    type: CSV
+info:
+  name: tool-one-hot-encoding
+  slug: tool-one-hot-encoding
+  type: PRE_PROCESSING
+  sourceUrl: https://github.com/FedLearnNet/tool-one-hot-encoding
+  shortDescription: Converts categorical table columns into one-hot encoded numeric
+    features.
+  longDescription: null
